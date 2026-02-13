@@ -3,8 +3,6 @@ import logging
 from aiogram import Router, types
 from aiogram.types import FSInputFile
 from aiogram.fsm.context import FSMContext
-
-# Импортируем наш универсальный сервис и конфиг
 from services.ydl_service import ydl_service
 from core.config import config
 
