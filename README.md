@@ -31,6 +31,13 @@ Ensure FFmpeg is installed on your system for media merging and audio conversion
 ```Bash
 sudo pacman -S ffmpeg
 ```
+Ensure gallery-dl is installed for Pinterest media downloads:
+```bash
+sudo pip install gallery-dl # For Python-based installation
+# OR, for system-wide installation (may vary by distro):
+# sudo apt install gallery-dl # Debian/Ubuntu
+# sudo dnf install gallery-dl # Fedora
+```
 **2. Clone and Install**
 ```
 git clone https://github.com/yourusername/savegram-bot.git

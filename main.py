@@ -9,7 +9,7 @@ from core.logger import setup_logger
 from middlewares.subscribe import SubscribeMiddleware
 
 # Import routers from the handlers folder
-from handlers import common, downloader, callbacks
+from handlers import common, downloader, callbacks, pinterest
 
 async def main():
     # 1. Launching the logger
@@ -28,6 +28,7 @@ async def main():
     dp.include_routers(
         common.router,
         callbacks.router,
+        pinterest.router, # Specific Pinterest handler
         downloader.router  # This one is always at the end because it catches all the links
     )
 

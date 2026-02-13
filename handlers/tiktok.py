@@ -28,11 +28,12 @@ async def download_and_send_video(message: types.Message, state: FSMContext):
 
         if file_path and os.path.exists(file_path):
         
-            caption = config.CAPTION_TEMPLATE.format(username=config.BOT_USERNAME.lstrip('@'))
+            bot_link = f"https://t.me/{config.BOT_USERNAME.lstrip('@')}" 
+            caption_template = f"[Скачать любую песню или видео🎧]({bot_link})"
             
             await message.answer_video(
                 video=FSInputFile(file_path),
-                caption=caption,
+                caption=caption_templateYt,
                 parse_mode="Markdown" 
             )
             

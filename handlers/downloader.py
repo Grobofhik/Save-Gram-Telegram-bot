@@ -5,7 +5,6 @@ from aiogram.fsm.context import FSMContext
 from handlers.youtube import show_format_menu
 from handlers.tiktok import download_and_send_video as tiktok_dl
 from handlers.instagram import download_and_send_video as instagram_dl
-from handlers.pinterest import download_and_send_video as pinterest_dl
 
 router = Router()
 
@@ -25,10 +24,6 @@ async def link_handler(message: types.Message, state: FSMContext):
     # Instagram
     elif "instagram.com" in url:
         await instagram_dl(message, state)
-        
-    # Pinterest
-    elif any(domain in url for domain in ["pinterest.com", "pin.it"]):
-        await pinterest_dl(message, state)
         
     else:
         await message.reply("😔 Извини, я не поддерживаю эту платформу.")
